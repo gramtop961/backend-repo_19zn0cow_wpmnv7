@@ -1,0 +1,27 @@
+{
+  "info": {
+    "name": "AI Song Generator API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Root",
+      "request": {"method": "GET", "url": "/"}
+    },
+    {
+      "name": "Create Project",
+      "request": {"method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode": "raw", "raw": "{\n  \"bpm\": 90,\n  \"lyrics\": \"Hello world\",\n  \"voice\": {\"type\": \"Male\", \"preset\": \"male_hindi_1\"},\n  \"moods\": [\"Romantic\"],\n  \"tracks\": []\n}"}, "url": "/api/projects"}
+    },
+    {
+      "name": "Upload Voice",
+      "request": {"method": "POST", "url": "/api/upload/voice"}
+    },
+    {"name": "Generate Instrumental", "request": {"method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode": "raw", "raw": "{\n  \"bpm\": 90,\n  \"lyrics\": \"Hello\",\n  \"voice\": {},\n  \"moods\": [],\n  \"tracks\": []\n}"}, "url": "/api/generate/instrumental"}},
+    {"name": "Generate Melody", "request": {"method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode": "raw", "raw": "{\n  \"bpm\": 90,\n  \"lyrics\": \"Hello\",\n  \"voice\": {},\n  \"moods\": [],\n  \"tracks\": []\n}"}, "url": "/api/generate/melody"}},
+    {"name": "Synthesize Vocal", "request": {"method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode": "raw", "raw": "{\n  \"bpm\": 90,\n  \"lyrics\": \"Hello\",\n  \"voice\": {},\n  \"moods\": [],\n  \"tracks\": []\n}"}, "url": "/api/synthesize/vocal"}},
+    {"name": "Mix", "request": {"method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode": "raw", "raw": "{\n  \"bpm\": 90,\n  \"lyrics\": \"Hello\",\n  \"voice\": {},\n  \"moods\": [],\n  \"tracks\": []\n}"}, "url": "/api/mix"}},
+    {"name": "Generate Video", "request": {"method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode": "raw", "raw": "{\n  \"bpm\": 90,\n  \"lyrics\": \"Hello\",\n  \"voice\": {},\n  \"moods\": [],\n  \"tracks\": []\n}"}, "url": "/api/generate/video"}},
+    {"name": "Create (Full Pipeline)", "request": {"method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode": "raw", "raw": "{\n  \"bpm\": 90,\n  \"lyrics\": \"Hello world, sing along\",\n  \"voice\": {\"type\": \"Male\"},\n  \"moods\": [\"Romantic\"],\n  \"tracks\": []\n}"}, "url": "/api/generate/create"}},
+    {"name": "Job Status", "request": {"method": "GET", "url": "/api/job/{{jobId}}/status"}}
+  ]
+}

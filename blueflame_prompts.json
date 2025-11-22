@@ -1,0 +1,37 @@
+{
+  "instrumental": {
+    "name": "Instrumental Backing Generation",
+    "template": "Create an instrumental backing track at {{tempo_bpm}} BPM. Use the BPM to define the drum groove grid (kick/snare placement), arpeggiation rates, and rhythmic motifs. Respect selected moods and instruments. Output multi-stem audio (per instrument) at 44.1k/48k WAV and a combined preview. Include a tempo map locked to {{tempo_bpm}} throughout.",
+    "placeholders": ["tempo_bpm", "moods", "instruments", "intensity"]
+  },
+  "melody-from-lyrics": {
+    "name": "Lead Melody from Lyrics",
+    "template": "Generate a singable lead melody from provided lyrics at {{tempo_bpm}} BPM. Ensure stepwise motion predominates; avoid melodic leaps greater than one octave. Provide timestamp mapping for each lyric line relative to the tempo grid so syllables align to beats/subdivisions derived from {{tempo_bpm}}. Output: MIDI (melody track), lyric-to-timestamp map, and a reference tone.",
+    "placeholders": ["tempo_bpm", "lyrics"]
+  },
+  "vocal_synthesis": {
+    "name": "Vocal Synthesis",
+    "template": "Synthesize a vocal performance using the specified voice profile at {{tempo_bpm}} BPM. Use the tempo to determine phrasing length, breath points, and consonant timing against the beat. Input: melody MIDI, lyrics. Output: WAV mono 44.1k/48k vocals aligned to the tempo grid at {{tempo_bpm}}.",
+    "placeholders": ["tempo_bpm", "voice_profile_id"]
+  },
+  "mix_and_master": {
+    "name": "Mix and Master",
+    "template": "Mix stems and synthesized vocals at {{tempo_bpm}} BPM. Use BPM to set time-based effects (reverb pre-delay, delay times synced to note values). Target -14 LUFS integrated, preserve headroom. Output: master WAV/MP3 and per-stem WAV. Provide a simple mastering report.",
+    "placeholders": ["tempo_bpm", "stems"]
+  },
+  "video_generation": {
+    "name": "Video Generation",
+    "template": "Generate both 16:9 and 9:16 music video variants synced to the audio at {{tempo_bpm}} BPM. Use the BPM to time visual cuts and transitions. Burn in lyric subtitles at their timestamps. Output URLs for 16:9 MP4, 9:16 MP4, and a 30s promo clip.",
+    "placeholders": ["tempo_bpm", "lyrics_timestamps"]
+  },
+  "prebuilt_voices": {
+    "name": "Prebuilt Voice Profiles",
+    "template": "Return a catalog of prebuilt voice profiles (male/female; Bengali/Hindi accents). Include demo preview URLs. Ensure speaking/singing style examples are aligned to {{tempo_bpm}} BPM for consistent auditions.",
+    "placeholders": ["tempo_bpm"]
+  },
+  "promo_clip": {
+    "name": "Promo Clip",
+    "template": "Create a 30s promo social clip synced at {{tempo_bpm}} BPM highlighting chorus or hook. Include subtitles. Output a vertical MP4 and caption text.",
+    "placeholders": ["tempo_bpm", "hook_range"]
+  }
+}
